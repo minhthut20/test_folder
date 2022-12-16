@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button type="button" onclick="reverseNumber()"> Bài 1: Đảo ngược chuỗi và in ra kết quả </button>
+    <br><br>
+    <button type="button" onclick="upperCase()"> Bài 2: In ra chuỗi đó với các ký tự đầu của chữ mỗi chữ được viết
+        hoa </button>
+    <br><br>
+    <button type="button" onclick="removeDuplicateElement()"> Bài 3: Viết một chương trình xóa các phần tử trùng của một
+        mảng và in ra kết quả </button>
+    <br><br>
+    <button type="button" onclick="sortUpAscending()"> Bài 4: Viết một chương sắp xếp các phần tử là số ở trong mảng
+        theo thứ tự tăng dần </button>
+
+
+</body>
+<script>
+    // Bài 1: Đảo ngược chuỗi và in ra kết quả
+    // function reverseNumber() {
+    //     let a = prompt("Nhập vào một chuỗi :");
+    //     document.write("Chuỗi ký tự ban đầu là: " + a);
+
+    //     let aArr = a.split('');
+    //     for (let i = 0, j = aArr.length - 1; i < j; i++, j--) {
+    //         let temp = aArr[i];
+    //         aArr[i] = aArr[j];
+    //         aArr[j] = temp;
+    //     }
+    //     document.write("<br>Chuỗi ký tự sau khi đảo ngược là: " + aArr.join(''))
+    // }
+    function reverseNumber() {
+        let num = parseInt(prompt("Nhập vào số gồm 3 chữ số : "))
+        let num1 = parseInt(num / 100)
+        let num2 = parseInt((num % 100) / 10)
+        let num3 = parseInt((num % 100) % 10)
+        let reverseNumber = "" + num3 + num2 + num1
+        alert(reverseNumber)
+    }
+
+    //Bài 2: In ra chuỗi đó với các ký tự đầu của chữ mỗi chữ được viết hoa
+    function upperCase() {
+        let array1 = prompt("Nhập vào dãy kí tự")
+        document.write("Chuỗi ký tự ban đầu là: " + array1);
+
+        let newarray1 = array1.split('');
+
+        for (var i = 0; i < array1.length; i++) {
+            if (i == 0) {
+                newarray1[i] = newarray1[i].toUpperCase();
+            }
+            else if (newarray1[i - 1] == " ") { // ký tự trước nó là in hoa thì nó phải in hoa
+                newarray1[i] = newarray1[i].toUpperCase();
+            }
+            else {
+                newarray1[i] = newarray1[i].toLowerCase();
+            }
+        }
+        document.write("<br>Chuỗi ký tự sau khi chuyển đổi : " + newarray1.join(''))
+       
+    }
+
+
+    //Bài 3: Viết một chương trình xóa các phần tử trùng của một mảng và in ra kết quả
+    function removeDuplicateElement() {
+        let len = prompt("Nhập độ dài của mảng dữ liệu");
+        let a = [];
+        for (let i = 0; i < len; i++) {
+            a[i] = prompt("Nhập giá trị phần tử thứ (start from 1): " + (i + 1));
+        }
+        document.write("Chuỗi ký tự ban đầu là: " + a);
+        for (i = 0; i < a.length; i++) {
+            for (j = a.length - 1; j > i; j--) {
+                if (a[i] == a[j]) {
+                    a.splice(j, 1)
+                }
+            }
+        }
+        document.write("<br> Kết quả in ra là : " + a)
+    }
+
+    //Bài 4: Viết một chương sắp xếp các phần tử là số ở trong mảng theo thứ tự tăng dần
+    function sortUpAscending() {
+        let len = prompt("Nhập độ dài của mảng dữ liệu");
+        let a = [];
+        for (let i = 0; i < len; i++) {
+            a[i] = prompt("Nhập giá trị phần tử thứ (start from 1): " + (i + 1));
+        }
+        document.write("Chuỗi ký tự ban đầu là: " + a);
+        for (i = 0; i < a.length; i++) {
+            for (j = i; j < a.length; j++) {
+                if (a[i] > a[j]) {
+                    let temp = a[i];
+                    a[i] = a[j]
+                    a[j] = temp
+                }
+            }
+        }
+        document.write("<br> Kết quả sau khi sắp xếp là  : " + a)
+    }
+
+
+
+</script>
+
+</html>

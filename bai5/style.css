@@ -1,0 +1,50 @@
+* {
+    box-sizing: border-box;
+}
+
+.container {
+    margin: 0 auto;
+    text-align: center;
+    width: 1000px;
+    padding-bottom: 50px;
+}
+
+h1 {
+    color: red;
+    font-size: 50px;
+}
+
+.btn {
+    width: 500px;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.btn input {
+    font-size: 16px;
+    width: 250px;
+}
+
+.btn button {
+    font-size: 16px;
+}
+
+table {
+    margin: 0 auto;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+table th {
+    width: 200px;
+    background-color: rgb(249, 125, 125);
+    color: white;
+}
+
+table tr:nth-child(odd) {
+    background-color: #eee;
+}
+
+table tr:nth-child(even) {
+    background-color: white;
+}
